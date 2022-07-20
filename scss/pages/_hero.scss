@@ -1,0 +1,33 @@
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    gap: 2rem;
+    min-height:90vh;
+    padding: 7rem;
+    .first-col {
+        grid-row: 1 / -1;
+        grid-column: 1;
+    }
+     .second-col {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        height: 100%;
+        
+        .card,
+        & > a {
+            flex-grow: 1;
+        }
+    }
+    .card {
+        min-height:250px;
+    }
+       
+    @include media(tablet) {
+        padding:2rem
+    }
+
+    @include media(mobile) {
+        grid-template-columns:1fr;
+    }
+}
